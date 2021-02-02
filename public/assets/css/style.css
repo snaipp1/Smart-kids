@@ -178,8 +178,6 @@ h2 {
 }
 
 .menu_open {
-  position: absolute;
-  top: 0;
   width: 30%;
   height: 100%;
   background-color: #ffd000;
