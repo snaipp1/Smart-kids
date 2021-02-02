@@ -1,0 +1,111 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="nav-wrapper navbar-collapse">
+    <a href="/" class="brand-logo"><img src="/assets/images/logo.gif"/>Smart kids</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+      <i class="material-icons">menu</i>
+    </a>
+    <ul class="right hide-on-med-and-down navbar-nav navbar-nav ml-auto">
+      {{#if isHome}}
+        <li class="active menu__item nav-item menu__item_active">
+          <a class="nav-link" href="/">Главная</a>
+        </li>
+      {{else}}
+        <li class="menu__item nav-item">
+          <a class="nav-link" href="/">Главная</a>
+        </li>
+      {{/if}}
+
+      {{#if isTrainings}}
+          <li class="active menu__item nav-item menu__item_active">
+            <a class="nav-link" href="/trainings">Тренажеры</a>
+          </li>
+      {{else}}
+          <li class="menu__item nav-item">
+            <a class="nav-link" href="/trainings">Тренажеры</a>
+          </li>
+      {{/if}} 
+
+      {{#if isAuth}}
+        {{#if isProfile}}
+          <li class="active menu__item nav-item menu__item_active">
+            <a class="nav-link" href="/profile">Профиль</a>
+          </li>
+        {{else}}
+          <li class="menu__item nav-item">
+            <a class="nav-link" href="/profile">Профиль</a>
+          </li>
+        {{/if}} 
+        <li class="menu__item nav-item">
+          <a class="nav-link" href="/auth/logout">Выйти</a>
+        </li>
+      {{else}}
+        {{#if isLogin}}
+          <li class="active menu__item nav-item menu__item_active">
+            <a class="nav-link" href="/auth/login#login">Войти</a>
+          </li>
+        {{else}}
+          <li class="menu__item nav-item">
+            <a class="nav-link" href="/auth/login#login">Войти</a>
+          </li>
+        {{/if}} 
+      {{/if}}
+    </ul>
+  </div>
+</nav>
+
+<ul class="sidenav menu_open" id="mobile-demo">
+  {{#if isHome}}
+    <li class="active menu__item menu__item_active">
+      <i class="link__icon" style="background-image: url('/assets/images/icons/icon-main.png');"></i>
+      <a class="menu__link" href="/">Главная</a>
+    </li>
+  {{else}}
+    <li class="menu__item">
+      <i class="link__icon" style="background-image: url('/assets/images/icons/icon-main.png');"></i>
+      <a class="menu__link" href="/">Главная</a>
+    </li>
+  {{/if}}
+
+  {{#if isTrainings}}
+    <li class="active menu__item menu__item_active">
+      <i class="link__icon" style="background-image: url('/assets/images/icons/icon-training.png');"></i>
+      <a class="menu__link" href="/trainings">Тренажеры</a>
+    </li>
+  {{else}}
+    <li class="menu__item">
+      <i class="link__icon" style="background-image: url('/assets/images/icons/icon-training.png');"></i>
+      <a class="menu__link" href="/trainings">Тренажеры</a>
+    </li>
+  {{/if}} 
+
+  {{#if isAuth}}
+    {{#if isProfile}}
+      <li class="active menu__item menu__item_active">
+        <i class="link__icon" style="background-image: url('/assets/images/icons/icon-profile.png');"></i>
+        <a class="menu__link" href="/profile">Профиль</a>
+      </li>
+    {{else}}
+      <li class="menu__item">
+        <i class="link__icon" style="background-image: url('/assets/images/icons/icon-profile.png');"></i>
+        <a class="menu__link" href="/profile">Профиль</a>
+      </li>
+    {{/if}} 
+    <li class="menu__item">
+      <i class="link__icon" style="background-image: url('/assets/images/icons/icon-logout.png');"></i>
+      <a class="menu__link" href="/auth/logout">Выйти</a>
+    </li>
+  {{else}}
+    {{#if isLogin}}
+      <li class="active menu__item menu__item_active">
+        <i class="link__icon" style="background-image: url('/assets/images/icons/icon-login.png');"></i>
+        <a class="menu__link" href="/auth/login#login">Войти</a>
+      </li>
+    {{else}}
+      <li class="menu__item">
+        <i class="link__icon" style="background-image: url('/assets/images/icons/icon-login.png');"></i>
+        <a class="menu__link" href="/auth/login#login">Войти</a>
+      </li>
+    {{/if}} 
+  {{/if}}
+</ul>
+          

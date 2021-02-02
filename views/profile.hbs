@@ -1,0 +1,75 @@
+<main class="main-container profile">
+  <h1>Профиль</h1>
+  <div class="profile__userinfo">
+    <div class="profile__useravatar">
+      {{#if user.avatarUrl}}
+        <img 
+          class="avatar"
+          src="/{{user.avatarUrl}}" 
+          alt="avatar-{{user.name}}"
+        >
+      {{else}}
+        <p>Аватара нет</p>
+      {{/if}}
+    </div>
+
+    <div class="profile__info cards__item">
+      <form action="/profile" method="POST" enctype="multipart/form-data">
+        <p class="profile__email"><span>Ваш email:</span> <strong>{{user.email}}</strong></p>
+
+        <div class="input-field profile__username">
+          <input id="name" name="name" type="text" class="validate" required value="{{user.name}}">
+          <label for="name">Ваше имя</label>
+          <span class="helper-text" data-error="Имя не может быть пустым"></span>
+        </div>
+
+        <div class="file-field input-field profile__avatar">
+          <div class="btn btn-lg btn_cyan">
+            <span>Изменить аватар</span>
+            <input type="file" name="avatar">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
+
+        <input type="hidden" name="_csrf" value="{{csrf}}">
+
+        <button type="submit" class="btn btn-lg btn_orange">Сохранить изменения</button>
+      </form>
+    </div>
+  </div>
+  <hr>
+  {{#if statistics}}
+  <div class="col s12 profile__statistic">
+        <table class="responsive-table centered">
+          <thead>
+            <tr>
+                <th>№ п/п</th>
+                <th>Название тренажера</th>
+                <th>Тип тренажера</th>
+                <th>Количество баллов</th>
+                <th>Дата тренировки</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {{#each statistics}}
+            <tr>
+              <td>{{addOne @index}}</td>
+              <td>{{this.title}}</td>
+              <td>{{this.typeTraining}}</td>
+              <td>{{this.score}}</td>
+              <td>{{moment this.lastUpdate format="DD.MM.YYYY HH:mm"}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+  </div>
+  {{else}}
+  <div class="profile__statistic_empty center-align">
+    <img src="/assets/images/cat.gif" alt="Cat" style="width: 100px;">
+    <p>Статистики пока нет(( Перейти к <a href="/trainings">тренировкам?</a></p>
+  </div>
+  {{/if}}
+</main>

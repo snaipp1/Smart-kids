@@ -1,0 +1,29 @@
+<h1>Результат игры</h1>
+
+{{#if error}}
+  <p class="alert">{{error}}</p>
+{{/if}}
+
+<form action="/statistic" method="POST" novalidate>
+  <div class="input-field">
+    <input id="title" name="title" type="text" class="validate" required value="{{data.title}}">
+    <label for="title">Название тренинга</label>
+    <span class="helper-text" data-error="Введите название"></span>
+  </div>
+
+  <div class="input-field">
+    <input id="typeTraining" name="typeTraining" type="text" class="validate" required min="1" value="{{data.typeTraining}}">
+    <label for="typeTraining">Тип тренинга</label>
+    <span class="helper-text" data-error="Введите тип тренинга"></span>
+  </div>
+
+  <div class="input-field">
+    <input id="score" name="score" type="number" class="validate" required value="{{data.score}}">
+    <label for="score">Количество баллов</label>
+    <span class="helper-text" data-error="Введите количество баллов"></span>
+  </div>
+
+  <input type="hidden" name="_csrf" value="{{csrf}}">
+
+  <button class="btn btn-primary">Сохранить результат</button>
+</form>
