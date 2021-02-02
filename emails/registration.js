@@ -132,7 +132,7 @@ module.exports = function(email) {
                                <tr>
                                   <td valign="middle" width="270" style="padding: 10px 0 10px 20px;" class="logo">
                                      <div class="imgpop">
-                                        <a href="#" style="color:#ffff; text-decoration:none;">SMART KIDS</a>
+                                        <a href="${keys.BASE_URL}" style="color:#ffff; text-decoration:none;">SMART KIDS</a>
                                      </div>
                                   </td>
                                </tr>

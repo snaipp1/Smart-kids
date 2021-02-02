@@ -132,7 +132,7 @@ module.exports = function(email, token) {
                                <tr>
                                   <td valign="middle" width="270" style="padding: 10px 0 10px 20px;" class="logo">
                                      <div class="imgpop">
-                                        <a href="#"><img src="img/logo.png" alt="logo" border="0" style="display:block; border:none; outline:none; text-decoration:none;" st-image="edit" class="logo"></a>
+                                        <a href="${keys.BASE_URL}" style="display:block; border:none; outline:none; text-decoration:none;color: #fff;">SMART KIDS</a>
                                      </div>
                                   </td>
                                </tr>
@@ -166,7 +166,7 @@ module.exports = function(email, token) {
                                <tr>
                                   <!-- start of image -->
                                   <td align="center">
-                                     <a target="_blank" href="#"><img width="540" border="0" height="282" alt="" style="display:block; border:none; outline:none; text-decoration:none;" src="img/bigimage.png" class="bigimage"></a>
+                                     <a target="_blank" href="#"><img width="540" border="0" height="282" alt="" style="display:block; border:none; outline:none; text-decoration:none;" src="https://www.gamersdecide.com/sites/default/files/smilingkids.jpg" class="bigimage"></a>
                                   </td>
                                </tr>
                                <!-- end of image -->
