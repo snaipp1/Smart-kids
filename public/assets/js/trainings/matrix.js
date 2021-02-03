@@ -184,12 +184,6 @@ function stopGame(gameState) {
   finishFormContainer.innerHTML = `<form action="/statistic" method="POST" novalidate="" _lpchecked="1"><input type="hidden" id="title" name="title" value="${trainingInfo.name}"><input type="hidden" id="typeTraining" name="typeTraining" value="${trainingInfo.type}"><input type="hidden" id="score" name="score" value="${score}"><input type="hidden" name="_csrf" value="${csrf}"><button class="training__button btn"><i class="material-icons">close</i>Выйти</button></form>`;
   finishTrainingContainer.appendChild(finishFormContainer);
 
-  /* const finishButton = document.createElement('button');
-  finishButton.classList.add('training__button', 'btn');
-  finishButton.innerHTML = '<i class="material-icons">close</i>Выйти';
-  finishButton.addEventListener('click', closeTrainingHandler);
-  finishTrainingContainer.appendChild(finishButton); */
-
   gameContainer.textContent = '';
   gameContainer.appendChild(finishTrainingContainer);
 }
