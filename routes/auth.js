@@ -45,7 +45,7 @@ router.post('/login', async (req, res) => {
           if (err) {
             throw err
           }
-          res.redirect('/')
+          res.redirect('/profile')
         })
       } else {
         req.flash('loginError', 'Неверный пароль')
